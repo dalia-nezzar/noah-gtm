@@ -134,6 +134,7 @@
       padding: 8rem 3rem 5rem;
     }
 
+    /* animated grid background */
     #hero::before {
       content: '';
       position: absolute;
@@ -155,6 +156,7 @@
       }
     }
 
+    /* radial glow */
     #hero::after {
       content: '';
       position: absolute;
@@ -278,7 +280,6 @@
       border-color: var(--muted);
     }
 
-    /* ─── STATUS BAR ───────────────────────────────────── */
     .status-bar {
       margin-top: 4rem;
       display: flex;
@@ -844,7 +845,6 @@
   <div id="toast"></div>
 
   <script>
-    // dataLayer init (GTM requires this)
     window.dataLayer = window.dataLayer || [];
 
     function showToast(msg) {
@@ -858,7 +858,6 @@
       document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // ── EVENT 1: Wishlist ──────────────────────────────────
     // GTM Event: add_to_wishlist
     function handleWishlist() {
       window.dataLayer.push({
@@ -871,7 +870,6 @@
       console.log('[GTM] Event pushed: add_to_wishlist', window.dataLayer.at(-1));
     }
 
-    // ── EVENT 2: Download Demo ─────────────────────────────
     // GTM Event: download_demo
     function handleDownload() {
       window.dataLayer.push({
@@ -884,7 +882,6 @@
       console.log('[GTM] Event pushed: download_demo', window.dataLayer.at(-1));
     }
 
-    // ── EVENT 3: Newsletter ────────────────────────────────
     // GTM Event: newsletter_signup
     function handleNewsletter() {
       const input = document.getElementById('email-input');
@@ -905,6 +902,22 @@
       input.value = '';
       console.log('[GTM] Event pushed: newsletter_signup', window.dataLayer.at(-1));
     }
+
+    // GTM Event: scroll_depth
+    let scrollFired = false;
+    window.addEventListener('scroll', () => {
+      if (scrollFired) return;
+      const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+      if (scrolled >= 50) {
+        scrollFired = true;
+        window.dataLayer.push({
+          event: 'scroll_depth',
+          scroll_threshold: '50%',
+          page: 'noah_landing'
+        });
+        console.log('[GTM] Event pushed: scroll_depth 50%', window.dataLayer.at(-1));
+      }
+    });
 
     document.getElementById('email-input').addEventListener('keydown', (e) => {
       if (e.key === 'Enter') handleNewsletter();
