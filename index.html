@@ -679,7 +679,7 @@
       </p>
       <div class="hero-ctas">
         <button class="btn btn-primary" onclick="handleWishlist()">⊕ Ajouter à la liste de souhaits</button>
-        <button class="btn btn-secondary" onclick="scrollTo('#demo')">Télécharger la démo</button>
+        <button class="btn btn-secondary" onclick="scrollToSection('#demo')">Télécharger la démo</button>
       </div>
 
       <div class="status-bar">
@@ -854,7 +854,7 @@
       setTimeout(() => t.classList.remove('show'), 3000);
     }
 
-    function scrollTo(selector) {
+    function scrollToSection(selector) {
       document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' });
     }
 
