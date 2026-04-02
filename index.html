@@ -42,7 +42,6 @@
       cursor: crosshair;
     }
 
-    /* ─── SCANLINE OVERLAY ─────────────────────────────── */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -57,7 +56,6 @@
       z-index: 9999;
     }
 
-    /* ─── NOISE TEXTURE ────────────────────────────────── */
     body::after {
       content: '';
       position: fixed; inset: 0;
@@ -67,7 +65,6 @@
       opacity: .6;
     }
 
-    /* ─── NAV ──────────────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       display: flex; align-items: center; justify-content: space-between;
@@ -103,7 +100,6 @@
 
     nav a:hover { color: var(--blue); }
 
-    /* ─── HERO ─────────────────────────────────────────── */
     #hero {
       min-height: 100vh;
       display: grid;
@@ -113,7 +109,6 @@
       padding: 8rem 3rem 5rem;
     }
 
-    /* animated grid background */
     #hero::before {
       content: '';
       position: absolute; inset: 0;
@@ -129,7 +124,6 @@
       100% { background-position: 60px 60px; }
     }
 
-    /* radial glow */
     #hero::after {
       content: '';
       position: absolute;
@@ -193,7 +187,6 @@
       animation: fadeUp .8s .4s ease both;
     }
 
-    /* ─── BUTTONS ──────────────────────────────────────── */
     .btn {
       display: inline-flex; align-items: center; gap: .5rem;
       padding: .85rem 2rem;
@@ -271,7 +264,6 @@
       margin-top: .2rem;
     }
 
-    /* ─── SECTION SHARED ───────────────────────────────── */
     section { padding: 6rem 3rem; }
 
     .section-header {
@@ -294,7 +286,6 @@
       color: #fff;
     }
 
-    /* ─── LORE ─────────────────────────────────────────── */
     #lore {
       background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
       border-top: 1px solid var(--border);
@@ -354,7 +345,6 @@
       font-size: .95rem;
     }
 
-    /* ─── FEATURES ─────────────────────────────────────── */
     #features {
       max-width: 1100px;
       margin: 0 auto;
@@ -400,7 +390,6 @@
       line-height: 1.6;
     }
 
-    /* ─── DEMO SECTION ─────────────────────────────────── */
     #demo {
       background: var(--surface);
       border-top: 1px solid var(--border);
@@ -457,7 +446,6 @@
       margin-top: .2rem;
     }
 
-    /* ─── NEWSLETTER ───────────────────────────────────── */
     #newsletter {
       max-width: 600px;
       margin: 0 auto;
@@ -501,7 +489,6 @@
       letter-spacing: .05em;
     }
 
-    /* ─── FOOTER ───────────────────────────────────────── */
     footer {
       border-top: 1px solid var(--border);
       padding: 2rem 3rem;
@@ -524,7 +511,6 @@
       letter-spacing: .1em;
     }
 
-    /* ─── TOAST ────────────────────────────────────────── */
     #toast {
       position: fixed;
       bottom: 2rem; right: 2rem;
@@ -549,7 +535,6 @@
       transform: translateY(0);
     }
 
-    /* ─── ANIMATIONS ───────────────────────────────────── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -562,7 +547,6 @@
 
     .blink { animation: pulse 1.5s ease-in-out infinite; }
 
-    /* ─── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 768px) {
       nav ul { display: none; }
       .lore-grid, .features-list { grid-template-columns: 1fr; }
@@ -579,7 +563,6 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- ─── NAV ─────────────────────────────────────────── -->
 <nav>
   <div class="nav-logo">N<span>.</span>O<span>.</span>A<span>.</span>H<span>.</span></div>
   <ul>
@@ -590,7 +573,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </ul>
 </nav>
 
-<!-- ─── HERO ─────────────────────────────────────────── -->
 <section id="hero">
   <div class="hero-inner">
     <p class="hero-eyebrow blink">▶ ACCÈS ANTICIPÉ — TRANSMISSION ENTRANTE</p>
@@ -627,7 +609,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ─── LORE ──────────────────────────────────────────── -->
 <section id="lore">
   <div style="max-width: 1000px; margin: 0 auto;">
     <div class="section-header">
@@ -659,7 +640,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ─── FEATURES ──────────────────────────────────────── -->
 <section id="features" style="padding: 6rem 0; background: var(--bg);">
   <div class="section-header" style="padding: 0 3rem;">
     <p class="section-tag">// SPÉCIFICATIONS SYSTÈME</p>
@@ -699,7 +679,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ─── DEMO ───────────────────────────────────────────── -->
 <section id="demo">
   <div class="demo-inner">
     <div class="demo-badge">DÉMO v0.4.1 — BUILD ALPHA</div>
@@ -734,7 +713,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ─── NEWSLETTER ─────────────────────────────────────── -->
 <section id="newsletter" style="padding: 6rem 3rem; text-align: center; background: var(--bg);">
   <div style="max-width: 600px; margin: 0 auto;">
     <div class="section-header">
@@ -752,21 +730,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ─── FOOTER ─────────────────────────────────────────── -->
 <footer>
   <div class="footer-logo">N.O.A.H.</div>
   <div class="footer-note">© 2026 — Projet fictif à des fins de démonstration GTM</div>
 </footer>
 
-<!-- ─── TOAST ──────────────────────────────────────────── -->
 <div id="toast"></div>
 
-<!-- ─── SCRIPTS ───────────────────────────────────────── -->
 <script>
   // dataLayer init (GTM requires this)
   window.dataLayer = window.dataLayer || [];
 
-  // ── Toast helper ───────────────────────────────────────
   function showToast(msg) {
     const t = document.getElementById('toast');
     t.textContent = msg;
@@ -774,7 +748,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     setTimeout(() => t.classList.remove('show'), 3000);
   }
 
-  // ── Scroll helper ──────────────────────────────────────
   function scrollTo(selector) {
     document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' });
   }
@@ -827,7 +800,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     console.log('[GTM] Event pushed: newsletter_signup', window.dataLayer.at(-1));
   }
 
-  // ── Allow Enter key on newsletter input ───────────────
   document.getElementById('email-input').addEventListener('keydown', (e) => {
     if (e.key === 'Enter') handleNewsletter();
   });
