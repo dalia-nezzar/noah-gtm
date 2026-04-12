@@ -42,6 +42,7 @@
       cursor: crosshair;
     }
 
+    /* ─── SCANLINE OVERLAY ─────────────────────────────── */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -56,6 +57,7 @@
       z-index: 9999;
     }
 
+    /* ─── NOISE TEXTURE ────────────────────────────────── */
     body::after {
       content: '';
       position: fixed; inset: 0;
@@ -65,6 +67,7 @@
       opacity: .6;
     }
 
+    /* ─── NAV ──────────────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       display: flex; align-items: center; justify-content: space-between;
@@ -100,6 +103,7 @@
 
     nav a:hover { color: var(--blue); }
 
+    /* ─── HERO ─────────────────────────────────────────── */
     #hero {
       min-height: 100vh;
       display: grid;
@@ -109,6 +113,7 @@
       padding: 8rem 3rem 5rem;
     }
 
+    /* animated grid background */
     #hero::before {
       content: '';
       position: absolute; inset: 0;
@@ -124,6 +129,7 @@
       100% { background-position: 60px 60px; }
     }
 
+    /* radial glow */
     #hero::after {
       content: '';
       position: absolute;
@@ -187,6 +193,7 @@
       animation: fadeUp .8s .4s ease both;
     }
 
+    /* ─── BUTTONS ──────────────────────────────────────── */
     .btn {
       display: inline-flex; align-items: center; gap: .5rem;
       padding: .85rem 2rem;
@@ -237,6 +244,7 @@
       border-color: var(--muted);
     }
 
+    /* ─── STATUS BAR ───────────────────────────────────── */
     .status-bar {
       margin-top: 4rem;
       display: flex; gap: 3rem; justify-content: center;
@@ -263,6 +271,7 @@
       margin-top: .2rem;
     }
 
+    /* ─── SECTION SHARED ───────────────────────────────── */
     section { padding: 6rem 3rem; }
 
     .section-header {
@@ -285,6 +294,7 @@
       color: #fff;
     }
 
+    /* ─── LORE ─────────────────────────────────────────── */
     #lore {
       background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
       border-top: 1px solid var(--border);
@@ -344,6 +354,7 @@
       font-size: .95rem;
     }
 
+    /* ─── FEATURES ─────────────────────────────────────── */
     #features {
       max-width: 1100px;
       margin: 0 auto;
@@ -389,6 +400,7 @@
       line-height: 1.6;
     }
 
+    /* ─── DEMO SECTION ─────────────────────────────────── */
     #demo {
       background: var(--surface);
       border-top: 1px solid var(--border);
@@ -445,6 +457,7 @@
       margin-top: .2rem;
     }
 
+    /* ─── NEWSLETTER ───────────────────────────────────── */
     #newsletter {
       max-width: 600px;
       margin: 0 auto;
@@ -488,6 +501,7 @@
       letter-spacing: .05em;
     }
 
+    /* ─── FOOTER ───────────────────────────────────────── */
     footer {
       border-top: 1px solid var(--border);
       padding: 2rem 3rem;
@@ -510,6 +524,7 @@
       letter-spacing: .1em;
     }
 
+    /* ─── TOAST ────────────────────────────────────────── */
     #toast {
       position: fixed;
       bottom: 2rem; right: 2rem;
@@ -534,6 +549,7 @@
       transform: translateY(0);
     }
 
+    /* ─── ANIMATIONS ───────────────────────────────────── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -546,6 +562,7 @@
 
     .blink { animation: pulse 1.5s ease-in-out infinite; }
 
+    /* ─── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 768px) {
       nav ul { display: none; }
       .lore-grid, .features-list { grid-template-columns: 1fr; }
@@ -562,6 +579,7 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+<!-- ─── NAV ─────────────────────────────────────────── -->
 <nav>
   <div class="nav-logo">N<span>.</span>O<span>.</span>A<span>.</span>H<span>.</span></div>
   <ul>
@@ -573,6 +591,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </ul>
 </nav>
 
+<!-- ─── HERO ─────────────────────────────────────────── -->
 <section id="hero">
   <div class="hero-inner">
     <p class="hero-eyebrow blink">▶ ACCÈS ANTICIPÉ — TRANSMISSION ENTRANTE</p>
@@ -609,29 +628,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ─── ABOUT (section SEO) ──────────────────────────── -->
 <section id="about" style="background: var(--bg); border-bottom: 1px solid var(--border);">
   <div style="max-width: 800px; margin: 0 auto;">
     <div class="section-header">
       <p class="section-tag">// À PROPOS</p>
-      <h2 class="section-title">Qu'est-ce que N.O.A.H. ?</h2>
+      <h2 class="section-title">N.O.A.H. — Le jeu endless runner indie qui vous envoie dans l'espace</h2>
     </div>
     <div style="color: var(--text); line-height: 1.9; font-size: 1.05rem;">
+
       <p style="margin-bottom: 1.5rem;">
-        N.O.A.H. est un jeu vidéo développé par une petite équipe d'étudiants passionnés. Le jeu se déroule dans l'espace et propose au joueur de contrôler un robot. L'objectif est de courir le plus loin possible sans mourir. Le jeu est fait en Java et utilise OpenGL pour les graphismes.
+        Dans un univers où les étoiles défilent à toute vitesse et où la mort n'attend qu'un faux pas, N.O.A.H. s'impose comme l'une des expériences de runner indie les plus ambitieuses. Né d'un projet universitaire à l'UTBM, ce petit studio étudiant a conçu un <strong>jeu</strong> de <strong>course sans fin (endless runner)</strong> spatial qui mêle tension constante, génération procédurale et ambiance science-fiction pour une expérience qui ne ressemble à aucune autre. Si vous cherchez un <strong>endless runner</strong> capable de vous faire perdre la notion du temps parmi les meilleurs <strong>jeux</strong> indie du moment, vous êtes au bon endroit. Ce <strong>jeu</strong> est une véritable lettre d'amour au genre — et <strong>à propos</strong> de ce que l'indie peut accomplir quand la passion prime.
+      </p>
+
+      <h3 style="font-family: 'Orbitron', monospace; font-size: 1rem; color: var(--blue); margin-bottom: 1rem; letter-spacing: .05em;">Une course sans fin au cœur du cosmos</h3>
+      <p style="margin-bottom: 1.5rem;">
+        L'idée est simple, l'exécution addictive : vous incarnez un robot lancé dans une <strong>course</strong> sans fin à travers l'espace. L'objectif ? Survivre. Foncez, esquivez, anticipez — chaque seconde compte dans cet <strong>endless runner</strong> où les réflexes priment sur tout le reste. <strong>Courez</strong> dans ces couloirs cosmiques sans jamais ralentir, car l'univers ne vous accordera aucune grâce. Plus vous avancez dans ce périple, plus le rythme s'emballe : les obstacles se multiplient, les ennemis se font plus agressifs, et votre concentration doit atteindre un niveau quasi robotique pour espérer aller plus loin. C'est la promesse de l'endless : il n'y a pas de fin — seulement votre record à battre, <strong>run</strong> après <strong>run</strong>, dans un <strong>monde</strong> qui cherche à vous éliminer.
+      </p>
+
+      <h3 style="font-family: 'Orbitron', monospace; font-size: 1rem; color: var(--blue); margin-bottom: 1rem; letter-spacing: .05em;">Un gameplay conçu pour vous dépasser</h3>
+      <p style="margin-bottom: 1.5rem;">
+        Le gameplay de N.O.A.H. repose sur un principe éprouvé mais redoutablement efficace : sprintez ou mourez. Le runner avance automatiquement ; c'est à vous d'éviter tout ce qui se dresse en travers de sa trajectoire. La mécanique est immédiate, mais la maîtrise prend du temps. Chaque <strong>run</strong> devient une nouvelle leçon d'humilité — et une nouvelle raison de relancer le <strong>game</strong>. N.O.A.H. appartient à cette famille de <strong>jeux</strong> qui semblent simples à comprendre, impossibles à maîtriser. Pour les amateurs de <strong>jeux</strong> de <strong>course</strong> arcade, c'est exactement le défi qu'il leur faut.
+      </p>
+
+      <h3 style="font-family: 'Orbitron', monospace; font-size: 1rem; color: var(--blue); margin-bottom: 1rem; letter-spacing: .05em;">Des environnements générés à l'infini</h3>
+      <p style="margin-bottom: 1.5rem;">
+        L'une des forces majeures de N.O.A.H. réside dans sa génération procédurale. Les environnements sont créés automatiquement à chaque lancement : aucune session ne ressemblera à la précédente. Fini les patterns mémorisés — ici, l'adaptation en temps réel est la seule stratégie viable face aux obstacles et aux ennemis qui jalonnent chaque endless corridor spatial. C'est ce qui distingue ce <strong>jeu</strong> de <strong>course</strong> sans fin des autres <strong>jeux</strong> du genre : l'histoire de chaque partie s'écrit uniquement par vos réflexes, et les <strong>détails</strong> de chaque couloir se recomposent à chaque lancement pour garantir une menace perpétuellement renouvelée.
       </p>
       <p style="margin-bottom: 1.5rem;">
-        Le jeu propose plusieurs niveaux qui sont créés automatiquement à chaque partie. Cela signifie que chaque fois que vous jouez, vous aurez une expérience différente. Il y a aussi des obstacles et des ennemis que le joueur doit éviter. Plus vous avancez, plus le jeu devient difficile.
+        Sur votre chemin, une multitude d'ennemis et d'obstacles se dressent pour stopper votre progression dans ces couloirs spatiaux. L'environnement n'est pas qu'un décor : c'est un terrain hostile qui se reconfigure en permanence grâce à la <strong>création</strong> procédurale au cœur du moteur du <strong>jeu</strong>. Restez vigilant — la moindre inattention dans ces zones imprévisibles peut tout faire basculer. Chaque nouvelle <strong>mise à jour</strong> du projet promet d'enrichir encore ces environnements hostiles.
+      </p>
+
+      <h3 style="font-family: 'Orbitron', monospace; font-size: 1rem; color: var(--blue); margin-bottom: 1rem; letter-spacing: .05em;">Pourquoi se lancer dans l'odyssée N.O.A.H. ?</h3>
+      <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; display: flex; flex-direction: column; gap: .75rem;">
+        <li><strong>Course sans fin procédurale</strong> : des environnements différents à chaque partie, pour une rejouabilité totale</li>
+        <li><strong>Obstacles et ennemis variés</strong> : chaque <strong>run</strong> apporte son lot de nouvelles menaces à esquiver</li>
+        <li><strong>Action immédiate</strong> : pas de tutoriel interminable — lancez-vous dès les premières secondes et <strong>courez</strong> pour votre survie</li>
+        <li><strong>Difficulté progressive</strong> : l'aventure se corse naturellement au fil de votre progression, avec des <strong>modes</strong> de difficulté adaptés à tous les profils</li>
+        <li><strong>Ambiance sci-fi immersive</strong> : graphismes Java/OpenGL pour une atmosphère spatiale crédible</li>
+        <li><strong>Démo gratuite</strong> : <a href="#demo" style="color: var(--blue);">téléchargez la démo</a> accessible sur PC sans configuration puissante</li>
+      </ul>
+
+      <h3 style="font-family: 'Orbitron', monospace; font-size: 1rem; color: var(--blue); margin-bottom: 1rem; letter-spacing: .05em;">Un développeur étudiant, une ambition réelle</h3>
+      <p style="margin-bottom: 1.5rem;">
+        N.O.A.H. n'est pas qu'un simple runner — c'est une plongée dans une atmosphère science-fiction soignée. L'action est purement arcade : foncez le plus loin possible dans cette <strong>course</strong> effrénée, survivez le plus longtemps, dépassez votre limite personnelle. Pas de checkpoint, pas de sauvegarde — juste vous, le runner, et l'endless. Pour les fans de <strong>jeux</strong> de <strong>course</strong> pure, c'est une aventure qui récompense l'instinct avant tout.
       </p>
       <p style="margin-bottom: 1.5rem;">
-        N.O.A.H. a été créé dans le cadre d'un projet universitaire à l'UTBM. Les développeurs ont travaillé dur pour créer quelque chose d'intéressant et d'amusant. Le jeu est encore en développement et une démo gratuite est disponible au téléchargement. Les retours des joueurs sont les bienvenus pour améliorer le jeu avant sa sortie officielle.
+        Conçu par une petite équipe de développeurs étudiants passionnés à l'UTBM, ce <strong>game</strong> indie prouve qu'avec les bons outils et une vraie vision, un développeur indépendant peut créer un <strong>endless runner</strong> mémorable. Loin des productions AAA, ce développeur mise sur l'essentiel : une action nerveuse, des <strong>niveaux</strong> qui ne se répètent jamais, et des jeux qui récompensent la persévérance.
       </p>
       <p>
-        Si vous aimez les jeux qui demandent de la réactivité et de la concentration, N.O.A.H. pourrait vous plaire. Le jeu tourne sur PC et ne nécessite pas une machine très puissante. Essayez la démo et donnez votre avis !
+        La date de sortie officielle de N.O.A.H. sera annoncée prochainement. En attendant, <a href="#demo" style="color: var(--blue);">téléchargez la démo gratuite</a> et <a href="https://store.steampowered.com/" target="_blank" style="color: var(--blue);">ajoutez N.O.A.H. à votre liste de souhaits</a> pour ne pas manquer la sortie complète.
       </p>
+
     </div>
   </div>
 </section>
 
+<!-- ─── LORE ──────────────────────────────────────────── -->
 <section id="lore">
   <div style="max-width: 1000px; margin: 0 auto;">
     <div class="section-header">
@@ -663,6 +716,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ─── FEATURES ──────────────────────────────────────── -->
 <section id="features" style="padding: 6rem 0; background: var(--bg);">
   <div class="section-header" style="padding: 0 3rem;">
     <p class="section-tag">// SPÉCIFICATIONS SYSTÈME</p>
@@ -702,6 +756,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ─── DEMO ───────────────────────────────────────────── -->
 <section id="demo">
   <div class="demo-inner">
     <div class="demo-badge">DÉMO v0.4.1 — BUILD ALPHA</div>
@@ -736,6 +791,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ─── NEWSLETTER ─────────────────────────────────────── -->
 <section id="newsletter" style="padding: 6rem 3rem; text-align: center; background: var(--bg);">
   <div style="max-width: 600px; margin: 0 auto;">
     <div class="section-header">
@@ -753,16 +809,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ─── FOOTER ─────────────────────────────────────────── -->
 <footer>
   <div class="footer-logo">N.O.A.H.</div>
   <div class="footer-note">© 2026 — Projet fictif à des fins de démonstration GTM</div>
 </footer>
 
+<!-- ─── TOAST ──────────────────────────────────────────── -->
 <div id="toast"></div>
 
+<!-- ─── SCRIPTS ───────────────────────────────────────── -->
 <script>
+  // dataLayer init (GTM requires this)
   window.dataLayer = window.dataLayer || [];
 
+  // ── Toast helper ───────────────────────────────────────
   function showToast(msg) {
     const t = document.getElementById('toast');
     t.textContent = msg;
@@ -770,10 +831,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     setTimeout(() => t.classList.remove('show'), 3000);
   }
 
+  // ── Scroll helper ──────────────────────────────────────
   function scrollToSection(selector) {
     document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' });
   }
 
+  // ── EVENT 1: Wishlist ──────────────────────────────────
   // GTM Event: add_to_wishlist
   function handleWishlist() {
     window.dataLayer.push({
@@ -786,6 +849,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     console.log('[GTM] Event pushed: add_to_wishlist', window.dataLayer.at(-1));
   }
 
+  // ── EVENT 2: Download Demo ─────────────────────────────
   // GTM Event: download_demo
   function handleDownload() {
     window.dataLayer.push({
@@ -798,6 +862,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     console.log('[GTM] Event pushed: download_demo', window.dataLayer.at(-1));
   }
 
+  // ── EVENT 3: Newsletter ────────────────────────────────
   // GTM Event: newsletter_signup
   function handleNewsletter() {
     const input = document.getElementById('email-input');
@@ -819,6 +884,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     console.log('[GTM] Event pushed: newsletter_signup', window.dataLayer.at(-1));
   }
 
+  // ── Allow Enter key on newsletter input ───────────────
+  // ── EVENT 4: Scroll depth ─────────────────────────────
   // GTM Event: scroll_depth
   let scrollFired = false;
   window.addEventListener('scroll', () => {
